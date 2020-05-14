@@ -85,7 +85,7 @@ public class Practice11PieChartView extends View {
                 canvas.save();
                 canvas.translate(lineStartX*0.1f,lineStartY*0.1f);
                 canvas.drawArc(rectF,startAngle,versionBean.realAngle,true,mPaint);
-                canvas.restore();
+                canvas.restore(); //原点平移后要及时还原
             }else {
                 canvas.drawArc(rectF,startAngle,versionBean.realAngle,true,mPaint);
             }

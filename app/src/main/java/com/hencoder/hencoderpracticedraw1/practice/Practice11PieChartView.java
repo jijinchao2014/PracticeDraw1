@@ -71,6 +71,8 @@ public class Practice11PieChartView extends View {
 //        练习内容：使用各种 Canvas.drawXXX() 方法画饼图
         //将（0,0）位置移到画布中心
         canvas.translate((float) getWidth()/2-100,(float)getHeight()/2);
+        //起始角度要重置，否则从后台切回来的角度会继续累加，导致显示异常
+        startAngle = 0;
         for (int i = 0; i < list.size(); i++) {
             VersionBean versionBean = list.get(i);
             versionBean.realAngle = versionBean.number / total * realTotal;
